@@ -1,0 +1,162 @@
+.Rectangle{
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  height: 270px;
+  position: relative;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  padding: 15px 0px;
+}
+
+body{
+  background: #f2f2f2;
+  font: 1.156em/1.3 Gill Sans MT, Gill Sans, My Gill Sans, sans-serif;
+  font-size: xx-large;
+  margin: 0px;
+}
+
+.Name{
+  background-color:#fff;
+  border-bottom: 2px solid #e5e5e5;
+  left: 0;
+  position: relative;
+  right: 0;
+  top: 0;
+  height: 2em;
+  padding-left: 10px;
+}
+
+.Container{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Insert{
+  /*border: none;
+  border-bottom: 1px solid #a29797;*/
+  width: 2em;
+  font-size: xx-large;
+  height: 1em;
+
+  border-radius: 5px;
+
+  border: 0.09em solid #b8babb;
+
+  text-align: center;
+}
+
+.ButtonStyle{
+  color:#fff !important;
+  background-color:#2196F3 !important;
+  border: 0.2em solid #2196F3;
+  width: 3em;
+  height: 2em;
+  border-radius: 0.5em;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.Button{
+  color:#fff !important;
+  background-color:#2196F3 !important;
+  border: 0.2em solid #2196F3;
+  width: 2em;
+  height: 2em;
+  border-radius: 0.5em;
+  font-size: medium;
+  font-weight: bold;
+}
+
+#Cifras div{
+display: inline-block;
+}
+
+.Col {
+  display: inline-block;
+  text-align: center;
+  width: 32%;
+  position: absolute;
+}
+
+.ejercicio{
+  margin: 0 auto;
+  left: 0px;
+  right: 0px;
+  height: 0px;
+  top: 145px;
+}
+
+.VentanaFlotante{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  position: absolute;
+  text-align: center;
+  font-size: x-large;
+  color: dimgray;
+  display: none;
+  max-width: 90%;
+  width: 500px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 40vh;
+}
+
+.VentanaFlotante img{
+  position: absolute;
+  right: 0px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.VentanaFlotante #texto{
+  padding: 30px;
+}
+
+.bglayer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: #f2f2f2b5;
+  z-index: 0;
+  display: none;
+}
+
+.stats{
+  top: 10px;
+  right: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+  .Col {
+    display: block;
+    text-align: center;
+    width: 100%;
+    position: initial;
+  }
+  
+  #Botones div{
+    display: inline-block;
+  }
+  
+  .ejercicio{
+    top: auto;
+    height: auto;
+  }
+  
+  .stats {
+    right: auto;
+    top: auto; 
+  }
+  
+  .opciones, .stats {
+    font-size: 18px;
+    margin: 25px 0px;
+  }
+}
