@@ -103,7 +103,7 @@ display: inline-block;
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 40vh;
+  top: 22vh;
 }
 
 .VentanaFlotante img{
@@ -117,13 +117,18 @@ display: inline-block;
   padding: 30px;
 }
 
+.VentanaFlotante .ImgFlotante{
+  position: initial;
+  width: 25%;
+  padding: 0px;
+}
 .bglayer {
   position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: #f2f2f2b5;
+  background: #b3dae65c;
   z-index: 0;
   display: none;
 }
@@ -158,5 +163,17 @@ display: inline-block;
   .opciones, .stats {
     font-size: 18px;
     margin: 25px 0px;
+  }
+  
+  .VentanaFlotante .ImgFlotante {
+    width: 40%;
+  }
+  
+  .VentanaFlotante {
+    font-size: initial;
+  }
+  
+  .VentanaFlotante #texto {
+    padding: 20px;
   }
 }

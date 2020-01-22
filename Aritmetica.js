@@ -4,17 +4,6 @@ let errores = 0;
 let Switch = false;
 let number = 1;
 let Signo;
-/*
-- Mejorar si elemento tiene 2 cifras recien comprobar y poner rojo si es incorecto OK
-- si el resultado de el ejercicio es 1 hacer un caso especial y poner 1 directamente en el imput sin decimales OK
-- poner cantidad de errores ok
-- poner titulo OK
-- poner musica
-- ayuda para darle enter
-- cara happy si es correcto y triste si es incorecto
-- cronometro
-*/
-/*--------------------------------------------------------------------*/
 /********************************Delete********************************/
 /*--------------------------------------------------------------------*/
 let img = document.querySelector('.VentanaFlotante img');
@@ -112,42 +101,6 @@ function Refresh(){
 function RandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
-/*--------------------------------------------------------------------*/
-/*********************************SUMA*********************************/
-/*--------------------------------------------------------------------*/
-function SumaDefault(){
-
-  let A = RandomInt(cifra);
-  let B = RandomInt(cifra);
-  Signo = "+"; 
-  document.getElementById('Mostar').innerHTML = A +"+"+ B +"="+
-    "<input type='text' id='Insert' autofocus "+
-    "onkeypress='return verificarDefault(event)'></input>";  
-  console.log("resultado de la suma1");
-  console.log(A+B);
-  return (A+B);
-  
-}
-
-let resultado = SumaDefault();
-
-
-function verificarDefault(e){
-  if(e.keyCode == 13){
-    if(resultado == document.getElementById('Insert').value){ 
-      Punctuation();
-      Sonido(true);
-      resultado = SumaDefault()
-      document.getElementById('Insert').focus()
-    }else{
-      Errores();
-      Sonido(false);
-      document.getElementById('Insert').style.background = '#ff7373';
-      document.getElementById('Insert').style.color = 'azure';
-    }
-  }
-}
-
 
 /*--------------------------------------------------------------------*/
 
@@ -169,8 +122,8 @@ function Resta(){
   document.getElementById('Mostar').innerHTML = A +"-"+ B +"="+
     "<input type='text' id='Insert' autofocus "+
     "onkeyup='return verificar2(event)'></input>";
-  console.log("resultado de la resta");
-  console.log(A-B);
+  /*console.log("resultado de la resta");
+  console.log(A-B);*/
   return (A-B);
 }
 
@@ -178,7 +131,6 @@ let result2 = Resta();
   
 var verificar2 = function(e){
   if(e.keyCode == 13){ 
-    console.log("entro");
     if(result2 == document.getElementById('Insert').value){
       Punctuation();
       Sonido(true);
@@ -206,9 +158,8 @@ function Multiplicacion(){
   document.getElementById('Mostar').innerHTML = A +"x"+ B +"="+
     "<input type='text' id='Insert' autofocus "+
     "onkeypress='return verificar3(event)'></input>";
-  console.log("resultado de la Multiplicacion");
-  console.log(A*B); 
-  return (A*B);
+  /*console.log("resultado de la Multiplicacion");*
+  return (A*B);*/
 }
 
 let result3 = Multiplicacion();
@@ -234,8 +185,19 @@ function verificar3(e){
 document.getElementById('ButtonDivision').innerHTML = "<input class='ButtonStyle' type='button' onclick='result4 = Division()' value='÷'>";
 /*--------------------------------------------------------------------*/ 
 function Division(){
-
-  let A = RandomInt(cifra);
+  let CasoEspecial= 1;
+  if(cifra == 10){
+    CasoEspecial = 100;
+  }else{
+    if(cifra == 100){
+      CasoEspecial = 1000;
+    }else{
+      if(cifra == 1000){
+        CasoEspecial = 10000;
+      }
+    }
+  }
+  let A = RandomInt(CasoEspecial);
   let B = RandomInt(cifra);
   Signo = "÷"; 
   if(B==0){
@@ -244,11 +206,12 @@ function Division(){
   document.getElementById('Mostar').innerHTML = A +"÷"+ B +"="+
     "<input type='text' id='Insert' autofocus "+
     "onkeypress='return verificar4(event)'></input>";
-  console.log("resultado de la Division");
-  console.log((A/B).toFixed(2));
-  let C = (A/B).toFixed(2);
-  /*if(){
-  }*/
+  //console.log("resultado de la Division");
+  //console.log((A/B).toFixed(1));
+  let C = (A/B).toFixed(1);
+  //let C = A / B; 
+  //C = Math.round(C);
+  //console.log(C);
   return C;
 }
 
@@ -258,7 +221,7 @@ function verificar4(e){
   console.log(result4);
   console.log(document.getElementById('Insert').value);
   let resultUser = document.getElementById('Insert').value;
-  resultUser = resultUser * 1.00;
+  resultUser = resultUser * 1.0;
   if(e.keyCode == 13){
     if(result4 == resultUser){ 
       Punctuation();
@@ -273,5 +236,39 @@ function verificar4(e){
     }
   }
 }
+/*--------------------------------------------------------------------*/
+/*********************************SUMA*********************************/
+/*--------------------------------------------------------------------*/
+function SumaDefault(){
 
+  let A = RandomInt(cifra);
+  let B = RandomInt(cifra);
+  Signo = "+"; 
+  document.getElementById('Mostar').innerHTML = A +"+"+ B +"="+
+    "<input type='text' id='Insert' autofocus "+
+    "onkeypress='return verificarDefault(event)'></input>";  
+  /*console.log("resultado de la suma1");
+  console.log(A+B);*/
+  return (A+B);
+  
+}
+
+let resultado = SumaDefault();
+
+
+function verificarDefault(e){
+  if(e.keyCode == 13){
+    if(resultado == document.getElementById('Insert').value){ 
+      Punctuation();
+      Sonido(true);
+      resultado = SumaDefault()
+      document.getElementById('Insert').focus()
+    }else{
+      Errores();
+      Sonido(false);
+      document.getElementById('Insert').style.background = '#ff7373';
+      document.getElementById('Insert').style.color = 'azure';
+    }
+  }
+}
 /*--------------------------------------------------------------------*/ 
