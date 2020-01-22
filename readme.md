@@ -4,7 +4,7 @@ Kuuby es un juego súper sencillo que trata de resolver ejercicios de aritmétic
 
 Aunque ya sabía algo de html, javascript y css, necesite ayuda para crear el juego ya que tuve muchos problemas al intentar hacerlo responsive y en ello me ayudo mucho **Kj** aunque también me ayudo con otros detalles del código.
 #Imagen del juego
-![Kuuby](https://ibb.co/GnLzH8W)
+![Kuuby](https://i.imgur.com/8WAeeDj.png)
 
 ## Créditos
  
